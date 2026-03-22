@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2415142312159365258}
   - component: {fileID: 5678606394479198087}
   - component: {fileID: 7011833819400576782}
-  - component: {fileID: 2649499201407410552}
+  - component: {fileID: 1243717688804915365}
   m_Layer: 0
   m_Name: FrogMesh
   m_TagString: Untagged
@@ -334,8 +334,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3599271562064872445}
   m_Mesh: {fileID: 0}
---- !u!65 &2649499201407410552
-BoxCollider:
+--- !u!136 &1243717688804915365
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -352,9 +352,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.7667046, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.28
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!1 &6745464477643612472
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +385,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8409808604921218791}
