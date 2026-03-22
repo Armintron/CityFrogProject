@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8041940081466287829}
   - component: {fileID: 2723692372492050823}
+  - component: {fileID: 7846000374143149515}
   - component: {fileID: 1496136586286986649}
   m_Layer: 0
   m_Name: Frog
@@ -41,7 +42,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7776376647985738854}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4846fce732a36ec4d95b2f25c11e99e5, type: 3}
   m_Name: 
@@ -56,6 +57,25 @@ MonoBehaviour:
   turnRate: 0.5
   speed: 0.05
   staminaRatePerSec: 25
+--- !u!114 &7846000374143149515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776376647985738854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4246b1b0af46c6f4e97d827894369fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotJumpKingController
+  meshRef: {fileID: 0}
+  rbRef: {fileID: 1496136586286986649}
+  isJumpingRight: 0
+  jumpDir: {x: 0, y: 1, z: 1}
+  currJumpForce: 0
+  jumpForcePerSec: 10
+  maxJumpForce: 30
 --- !u!54 &1496136586286986649
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64,9 +84,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7776376647985738854}
   serializedVersion: 5
-  m_Mass: 100
-  m_LinearDamping: 100
-  m_AngularDamping: 100
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -78,7 +98,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 114
@@ -97,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193214028199396144, guid: 931edbb4e79d237459bbf0d2dbdf588c, type: 3}
       propertyPath: m_VersionIndex
-      value: 383
+      value: 392
       objectReference: {fileID: 0}
     - target: {fileID: 8409808604921218791, guid: 931edbb4e79d237459bbf0d2dbdf588c, type: 3}
       propertyPath: m_LocalPosition.x

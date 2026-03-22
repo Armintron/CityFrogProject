@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2415142312159365258}
   - component: {fileID: 5678606394479198087}
   - component: {fileID: 7011833819400576782}
-  - component: {fileID: 1243717688804915365}
+  - component: {fileID: 6713232778556757283}
   m_Layer: 0
   m_Name: FrogMesh
   m_TagString: Untagged
@@ -334,8 +334,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3599271562064872445}
   m_Mesh: {fileID: 0}
---- !u!136 &1243717688804915365
-CapsuleCollider:
+--- !u!65 &6713232778556757283
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -352,11 +352,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.28
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.2, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 1.0000002, y: 0.91664326, z: 0.34675723}
+  m_Center: {x: -4.4178676e-16, y: -0.11171526, z: 0.15608795}
 --- !u!1 &6745464477643612472
 GameObject:
   m_ObjectHideFlags: 0
