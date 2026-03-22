@@ -6,15 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject meshRef;
     public Rigidbody rbRef;
-    public TextMeshPro staminaText;
+    public TextMeshProUGUI staminaText;
 
     public bool isClimbing = false;
-    public int maxStamina = 100;
-    public int currStamina = 100;
-    public int minStaminaToStartClimbing = 30;
+    public float maxStamina = 100;
+    public float currStamina = 100;
+    public float minStaminaToStartClimbing = 30;
     public float turnRate = 10f;
     public float speed = 10f;
-    public int staminaRatePerSec = 10;
+    public float staminaRatePerSec = 10;
 
     void Update()
     {
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
         if (isClimbing)
         {
-            currStamina -= (int)(staminaRatePerSec * Time.deltaTime);
+            currStamina -= staminaRatePerSec * Time.deltaTime;
             rbRef.useGravity = false;
             if (Input.GetKey(KeyCode.W))
             {
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            currStamina += (int)(staminaRatePerSec * Time.deltaTime);
+            currStamina += staminaRatePerSec * Time.deltaTime;
             rbRef.useGravity = true;
         }
 
@@ -62,6 +62,6 @@ public class PlayerController : MonoBehaviour
             isClimbing = false;
         }
 
-        staminaText.text = "Stamina: " + currStamina;
+        staminaText.text = "Stamina: " + (int)currStamina;
     }
 }

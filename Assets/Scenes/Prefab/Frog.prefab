@@ -48,12 +48,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   meshRef: {fileID: 7776376647985738854}
   rbRef: {fileID: 1496136586286986649}
+  staminaText: {fileID: 0}
   isClimbing: 0
   maxStamina: 100
   currStamina: 100
+  minStaminaToStartClimbing: 30
   turnRate: 0.5
   speed: 0.01
-  staminaRatePerSec: 10
+  staminaRatePerSec: 40
 --- !u!54 &1496136586286986649
 Rigidbody:
   m_ObjectHideFlags: 0
