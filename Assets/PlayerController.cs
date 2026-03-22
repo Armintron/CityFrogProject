@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,24 +6,30 @@ public class PlayerController : MonoBehaviour
 {
     public GameObject meshRef;
     public Rigidbody rbRef;
+    public TextMeshPro staminaText;
 
     public bool isClimbing = false;
-    public float maxStamina = 100f;
-    public float currStamina = 100f;
+    public int maxStamina = 100;
+    public int currStamina = 100;
+    public int minStaminaToStartClimbing = 30;
     public float turnRate = 10f;
     public float speed = 10f;
-    public float staminaRatePerSec = 10f;
+    public int staminaRatePerSec = 10;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && currStamina >= minStaminaToStartClimbing)
         {
-            isClimbing = true;
+            isClimbing = !isClimbing;
+            if (isClimbing)
+            {
+                rbRef.linearVelocity = rbRef.angularVelocity = Vector3.zero;
+            }
         }
 
         if (isClimbing)
         {
-            currStamina -= staminaRatePerSec * Time.deltaTime;
+            currStamina -= (int)(staminaRatePerSec * Time.deltaTime);
             rbRef.useGravity = false;
             if (Input.GetKey(KeyCode.W))
             {
@@ -33,22 +40,28 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.A))
                 {
-                    meshRef.transform.Rotate(Vector3.right, -turnRate);
+                    meshRef.transform.Rotate(meshRef.transform.right, -turnRate);
                 }
 
                 if (Input.GetKey(KeyCode.D))
                 {
-                    meshRef.transform.Rotate(Vector3.right, turnRate);
+                    meshRef.transform.Rotate(meshRef.transform.right, turnRate);
                 }
             }
 
         }
         else
         {
-            currStamina += staminaRatePerSec * Time.deltaTime;
+            currStamina += (int)(staminaRatePerSec * Time.deltaTime);
             rbRef.useGravity = true;
         }
 
-        currStamina = Mathf.Clamp(currStamina, 0, maxStamina);  
+        currStamina = Mathf.Clamp(currStamina, 0, maxStamina);
+        if (currStamina == 0)
+        {
+            isClimbing = false;
+        }
+
+        staminaText.text = "Stamina: " + currStamina;
     }
 }
