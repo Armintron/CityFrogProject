@@ -140,14 +140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4246b1b0af46c6f4e97d827894369fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NotJumpKingController
-  meshRef: {fileID: 7776376647985738854}
   rbRef: {fileID: 1496136586286986649}
   isJumpingRight: 0
-  jumpDir: {x: 0, y: 1, z: 0.2}
-  groundDist: 0.2
+  jumpDir: {x: 0, y: 1, z: 0.8}
   grounded: 0
+  bounceFactor: 0.5
   currJumpForce: 0
-  jumpForcePerSec: 20
+  jumpForcePerSec: 60
   maxJumpForce: 30
 --- !u!54 &1496136586286986649
 Rigidbody:

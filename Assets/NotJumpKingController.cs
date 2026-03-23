@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class NotJumpKingController : MonoBehaviour
 {
-    public GameObject meshRef;
     public Rigidbody rbRef;
     public bool isJumpingRight = false;
     public Vector3 jumpDir = Vector3.right + Vector3.up;
-    public float groundDist = .2f;
     public bool grounded = false;
     public float bounceFactor = .5f;
     public float currJumpForce = 0f;
@@ -17,17 +15,10 @@ public class NotJumpKingController : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("wall"))
         {
-            Debug.Log("Hitting");
             if (!grounded)
             {
-                Debug.Log("Bouncing");
                 rbRef.linearVelocity *= bounceFactor;
                 rbRef.linearVelocity = Vector3.Reflect(rbRef.linearVelocity, Vector3.forward);
-                return;
-                if (Vector3.Dot(Vector3.up, rbRef.linearVelocity) > 0)
-                {
-                    rbRef.linearVelocity = Vector3.Reflect(rbRef.linearVelocity, Vector3.up);
-                }
             }
         }
     }
@@ -43,7 +34,6 @@ public class NotJumpKingController : MonoBehaviour
             isJumpingRight = false;
         }
 
-        Debug.Log("Grounded: " + grounded);
         if (grounded && Input.GetKey(KeyCode.Space))
         {
             currJumpForce += jumpForcePerSec * Time.deltaTime;
